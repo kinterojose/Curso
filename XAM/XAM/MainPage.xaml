@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XAM.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <!--<Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />-->
+
+        <!--<ActivityIndicator Color="Blue" IsRunning="True" BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+
+        <!--<BoxView Color="GreenYellow" />-->
+
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center"> 
+            <Button Text="Grabar" TextColor="White" BackgroundColor="Blue" BorderColor="Red" BorderWidth="2" CornerRadius="5" 
+                    ImageSource="original.png" Clicked="Button_Clicked" HeightRequest="150"/>
+        </StackLayout>
+
+        <DatePicker HorizontalOptions="Center" VerticalOptions="Center" x:Name="Fecha" Format="dd/MM/yyyy"/>
+
+        <Editor x:Name="Editor" HeightRequest="50" BackgroundColor="Black" TextColor="White"/>
+
+        <!--<Entry VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsPassword="True" Placeholder="Prueba de Entry" PlaceholderColor="Green" />-->
+
+        <!--<Image Source="original.png" Aspect="AspectFit" HeightRequest="50"/>-->
+
+        <!--<Label Text="Hola Label" HorizontalOptions="Center" TextColor="Red" LineBreakMode="TailTruncation">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Horario: "
+                          FontAttributes="Bold"
+                          FontSize="Large"
+                          BackgroundColor="Green"
+                          TextColor="RosyBrown"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>-->
+
+        <StackLayout Margin="30">
+            <Picker x:Name="piker" Title="Seleccione un item" TitleColor="White" TextColor="Red" BackgroundColor="Black" SelectedIndexChanged="piker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Resultado 1</x:String>
+                    <x:String>Resultado 2</x:String>
+                    <x:String>Resultado 3</x:String>
+                    <x:String>Resultado 4</x:String>
+                    <x:String>Resultado 5</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+
+        <ProgressBar x:Name="progreso" Progress=".1"></ProgressBar>
+        <Button Text="Silumador" x:Name="Sumilador" Clicked="Sumilador_Clicked"/>
+
+        <SearchBar Placeholder="Buscador" CancelButtonColor="Red" SearchButtonPressed="SearchBar_SearchButtonPressed"/>
+
+        <Slider x:Name="Slider" Maximum="200" Minimum="10" Value="50" ValueChanged="Slider_ValueChanged"/>
+        
+        <Label x:Name="lblDisplay"/>
+
+        <Stepper x:Name="Stepper" Minimum="0" Maximum="10" Increment="1" ValueChanged="Stepper_ValueChanged"/>
+
+        <Switch x:Name="SwitchControl" Toggled="Switch_Toggled" IsToggled="False"/>
+
+        <TableView Intent="Form"> <!--Tabla general-->
+            <TableRoot Title="Titulo">           <!--Tabla Raiz-->
+                <TableSection Title="Datos Generales">                    <!--Tabla Seccion-->
+                    <TextCell Text="Nombre" Detail="Solo para mayores de 18 años">
+                        
+                    </TextCell>
+                    <EntryCell Placeholder="Su nombre">
+                        
+                    </EntryCell>
+                    <EntryCell Placeholder="(57) 3103686025"
+                               Label="Telefono" Keyboard="Numeric">
+
+                    </EntryCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <TimePicker TextColor="Black"></TimePicker>
+
+    </StackLayout>
+
+    
+</ContentPage>
